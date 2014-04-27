@@ -1,0 +1,51 @@
+<div ng-include="'partials/navbar'"></div>
+
+<div class="contact-us">
+	<h2>Contact Us</h2>
+
+	<!-- <div class="box">
+		<div class="">
+			<label>Name</label>
+			<input type="text" placeholder="Full Name"/>
+		</div>
+	</div> -->
+
+
+	<form name="contactUsForm" id="edit-user-form" class="form-horizontal ng-scope ng-pristine ng-invalid ng-invalid-required" role="form" novalidate="" ng-submit="submitForm()">
+		{{setForm(contactUsForm)}}
+		<div class="modal-body ng-binding">
+			<div class="clearfix"></div>
+
+			<div class="form-group">
+				<label for="inputFullname" class="col-sm-4 control-label">Full Name</label>
+				<div class="col-sm-7">
+					<input type="text" class="form-control ng-pristine ng-invalid ng-invalid-required" name="inputFirstName" ng-class="" placeholder="First and Last Name" ng-model="fullname" required>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label for="inputEmail" class="col-sm-4 control-label">Email Address</label>
+				<div class="col-sm-7">
+					<input type="email" class="form-control ng-isolate-scope ng-pristine ng-invalid ng-invalid-required error ng-valid-email" name="inputEmail" placeholder="Email Address" ng-model="emailAddress" ng-class="" required>
+				</div>
+				<div class="col-sm-1 info-sign-wrapper">
+					<span html-tip="Please enter your email address" data-original-title="" title=""><a class="no-highlight" href="javascript:;" tabindex="-1"> <i class="icon icon-info-sign box-info"></i></a></span>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label for="textAreaMessage" class="col-sm-4 control-label">Message</label>
+				<div class="col-sm-7">
+					<textarea style="height: 200px; padding: 10px;" name="messageText" ng-model="message" class="text-area col-xs-12" required></textarea>
+				</div>
+			</div>
+
+		</div>
+		<div class="modal-footer">
+			<button type="button" class="btn btn-default" ng-click="clearForm()" data-dismiss="modal">Clear Form</button>
+			<button id="submit" ladda="" type="submit" class="btn btn-primary ladda-button" data-style="zoom-in">
+				<span class="ladda-label">Submit</span>
+				<span class="ladda-spinner"></span></button>
+			</div>
+		</form>
+	</div>
