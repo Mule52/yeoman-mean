@@ -60,3 +60,4 @@ angular.module('yeomanMeanApp', [
       }
     });
   });
+

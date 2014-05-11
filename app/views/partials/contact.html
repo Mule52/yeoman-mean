@@ -11,15 +11,31 @@
 	</div> -->
 
 
-	<form name="contactUsForm" id="edit-user-form" class="form-horizontal ng-scope ng-pristine ng-invalid ng-invalid-required" role="form" novalidate="" ng-submit="submitForm()">
+	<div ng-if="contactSubmitted == true" name="contactSubmittedForm" style="text-align: center; padding-top:50px;">
+		Thank you for submitting your request. We will get back to you shortly.
+
+		<p/>
+		If you are not redirected in 10 seconds, click <a href="/">here</a>.
+	</div>
+
+	<form name="contactUsForm" id="edit-user-form" class="form-horizontal ng-scope ng-pristine ng-invalid ng-invalid-required" role="form" novalidate="" ng-submit="submitForm()" ng-if="formIsVisible == true">
 		{{setForm(contactUsForm)}}
 		<div class="modal-body ng-binding">
 			<div class="clearfix"></div>
 
+			<div ng-if="hasErrors" class="alert alert-danger">
+		      <strong>Oh snap!</strong> There are errors on the page.
+		      <ul>
+		      	<li ng-repeat="e in errors">
+		      		{{e.message}}
+		      	</li>
+		      </ul>
+		    </div>
+
 			<div class="form-group">
 				<label for="inputFullname" class="col-sm-4 control-label">Full Name</label>
 				<div class="col-sm-7">
-					<input type="text" class="form-control ng-pristine ng-invalid ng-invalid-required" name="inputFirstName" ng-class="" placeholder="First and Last Name" ng-model="fullname" required>
+					<input type="text" class="form-control ng-pristine ng-invalid ng-invalid-required" name="inputFullname" ng-class="" placeholder="First and Last Name" ng-model="fullname" required>
 				</div>
 			</div>
 
