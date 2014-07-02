@@ -29,6 +29,10 @@ angular.module('yeomanMeanApp', [
         templateUrl: 'partials/contact',
         controller: 'ContactCtrl'
       })
+      .when('/admin/messages', {
+        templateUrl: 'partials/admin/messages',
+        controller: 'AdminMessagesCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
